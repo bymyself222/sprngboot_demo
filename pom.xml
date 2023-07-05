@@ -69,13 +69,17 @@
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.github.oshi</groupId>
+            <artifactId>oshi-core</artifactId>
+            <version>5.3.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.47</version>
+        </dependency>
     </dependencies>
-
-    <dependency>
-        <groupId>com.github.oshi</groupId>
-        <artifactId>oshi-core</artifactId>
-        <version>5.3.6</version>
-    </dependency>
 
     <build>
         <plugins>
