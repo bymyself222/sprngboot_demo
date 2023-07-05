@@ -1,12 +1,13 @@
 package com.hls.logback.Interceptor;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.hls.logback.Enum.ExceptionEnum;
+import com.hls.logback.Exception.BizException;
 import com.hls.logback.common.ResultBody;
 import com.hls.logback.utils.TokenUtil;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
@@ -30,22 +31,11 @@ public class CheckTokenInterceptor implements HandlerInterceptor {
         String token = request.getHeader("token");
         System.out.println("token:"+token);
         if(token == null){
-            doResponse(response,ResultBody.error("登录失败"));
+            throw new BizException(ExceptionEnum.LOGIN_ERROR);
         }else{
             Map<String, Object> stringObjectMap = tokenUtil.parseToken(token);
             return true;
         }
-        return false;
     }
 
-    @SneakyThrows
-    private void doResponse(HttpServletResponse response, ResultBody responseBody) {
-        response.setContentType("application/json");
-        response.setCharacterEncoding("utf-8");
-        PrintWriter out = response.getWriter();
-        String s = new ObjectMapper().writeValueAsString(responseBody);
-        out.print(s);
-        out.flush();
-        out.close();
-    }
 }
