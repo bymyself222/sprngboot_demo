@@ -1,5 +1,7 @@
 package com.hls.logback.controller;
 
+import com.hls.logback.Enum.ExceptionEnum;
+import com.hls.logback.Exception.BizException;
 import com.hls.logback.annotation.LimitCount;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -18,7 +20,8 @@ public class LoginController {
     @LimitCount(key = "login", name = "登录接口", prefix = "limit")
     public String login(String username, String password, HttpServletRequest request) throws Exception {
         if (StringUtils.equals("kk", username) && StringUtils.equals("123456", password)) {
-            return "登录成功";
+            throw new BizException(ExceptionEnum.INTERNAL_SERVER_ERROR);
+//            return "登录成功";
         }
         return "账户名或密码错误";
     }
