@@ -19,4 +19,18 @@ public class TestController {
         System.out.println(add);
         return value + add;
     }
+
+    @GetMapping("access")
+    public String access(){
+        if(testService.tryAcquire()){
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            return "access";
+        }else{
+            return "no access";
+        }
+    }
 }
