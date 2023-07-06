@@ -1,7 +1,7 @@
 package com.hls.logback.common;
 
 import com.alibaba.fastjson.JSONObject;
-import com.hls.logback.Enum.ExceptionEnum;
+import com.hls.logback.enums.ExceptionEnum;
 import lombok.Getter;
 import lombok.Setter;
 

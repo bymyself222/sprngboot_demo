@@ -1,7 +1,7 @@
 package com.hls.logback.common;
 
-import com.hls.logback.Enum.ExceptionEnum;
-import com.hls.logback.Exception.BizException;
+import com.hls.logback.enums.ExceptionEnum;
+import com.hls.logback.exceptions.BizException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

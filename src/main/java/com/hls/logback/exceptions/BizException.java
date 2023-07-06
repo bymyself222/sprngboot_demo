@@ -1,6 +1,6 @@
-package com.hls.logback.Exception;
+package com.hls.logback.exceptions;
 
-import com.hls.logback.Enum.ExceptionEnum;
+import com.hls.logback.enums.ExceptionEnum;
 import lombok.Getter;
 import lombok.Setter;
 

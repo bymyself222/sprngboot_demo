@@ -1,18 +1,14 @@
-package com.hls.logback.Interceptor;
+package com.hls.logback.interceptor;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hls.logback.Enum.ExceptionEnum;
-import com.hls.logback.Exception.BizException;
-import com.hls.logback.common.ResultBody;
+import com.hls.logback.enums.ExceptionEnum;
+import com.hls.logback.exceptions.BizException;
 import com.hls.logback.utils.TokenUtil;
-import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.PrintWriter;
 import java.util.Map;
 
 @Component

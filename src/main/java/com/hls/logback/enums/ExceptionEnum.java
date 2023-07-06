@@ -1,4 +1,4 @@
-package com.hls.logback.Enum;
+package com.hls.logback.enums;
 
 public enum ExceptionEnum {
     // 数据操作错误定义

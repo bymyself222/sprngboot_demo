@@ -1,7 +1,5 @@
 package com.hls.logback.controller;
 
-import com.hls.logback.Enum.ExceptionEnum;
-import com.hls.logback.Exception.BizException;
 import com.hls.logback.annotation.LimitCount;
 import com.hls.logback.common.ResultBody;
 import com.hls.logback.utils.TokenUtil;
