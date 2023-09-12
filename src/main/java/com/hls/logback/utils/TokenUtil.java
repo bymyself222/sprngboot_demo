@@ -22,14 +22,14 @@ public class TokenUtil {
 
     private static final String DEFAULT_ISSUER = "HUANG";
 
-    private static final Long DEFAULT_EXPIRE_TIME = 7*24*60*60L;
+    private static final Long DEFAULT_EXPIRE_TIME = 7 * 24 * 60 * 60L;
 
 
-    public String createToken(Map<String, Object> dataMap){
+    public String createToken(Map<String, Object> dataMap) {
         return createToken(dataMap, DEFAULT_SECRET);
     }
 
-    public String createToken(Map<String, Object> dataMap, String secret){
+    public String createToken(Map<String, Object> dataMap, String secret) {
         // 指定使用的加密算法
         Algorithm algorithm = Algorithm.HMAC256(secret);
         return JWT.create()
@@ -41,16 +41,22 @@ public class TokenUtil {
                 .sign(algorithm);
     }
 
-    public Map<String, Object> parseToken(String token){
+    public Map<String, Object> parseToken(String token) {
         return parseToken(token, DEFAULT_SECRET);
     }
 
-    public Map<String, Object> parseToken(String token, String secret){
+    public Map<String, Object> parseToken(String token, String secret) {
         // 指定使用的加密算法
         Algorithm algorithm = Algorithm.HMAC256(secret);
         JWTVerifier jwtVerifier = JWT.require(algorithm).build();
         DecodedJWT decodedJWT = jwtVerifier.verify(token);
         return decodedJWT.getClaim(DEFAULT_DATA_KEY).asMap();
     }
+
+    public static void main(String[] args) {
+        int[] a={1,2,3,4},b[]={{1,2,3},{4,5,6}};
+        System.out.println(b[0]==a);
+    }
+
 
 }

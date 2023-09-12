@@ -1,5 +1,6 @@
 package com.hls.logback;
 
+import com.hls.logback.utils.SerialService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;

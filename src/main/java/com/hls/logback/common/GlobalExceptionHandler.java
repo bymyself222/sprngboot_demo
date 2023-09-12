@@ -14,9 +14,6 @@ public class GlobalExceptionHandler {
 
     /**
      * 处理自定义的业务异常
-     * @param req
-     * @param e
-     * @return
      */
     @ExceptionHandler(value = BizException.class)
     @ResponseBody
@@ -27,9 +24,6 @@ public class GlobalExceptionHandler {
 
     /**
      * 处理空指针的异常
-     * @param req
-     * @param e
-     * @return
      */
     @ExceptionHandler(value =NullPointerException.class)
     @ResponseBody
@@ -41,9 +35,6 @@ public class GlobalExceptionHandler {
 
     /**
      * 处理其他异常
-     * @param req
-     * @param e
-     * @return
      */
     @ExceptionHandler(value =Exception.class)
     @ResponseBody
